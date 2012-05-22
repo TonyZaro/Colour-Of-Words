@@ -42,7 +42,7 @@ input{width:300px;height:40px;}
 #header{font-family: 'Press Start 2P', cursive; font-size:35px;color:black; text-align:left;line-height:100px; }
 .instruction{ font-family: 'Press Start 2P', cursive; color:black;font-size:18px;}
 input{font-family: 'Press Start 2P', cursive; color:black;font-size:18px;}
-.coolButton{font-family:'Press Start 2P',cursive; color:white;font-size:15px;font-weight:bold;}
+.coolButton{font-family:'Press Start 2P',cursive; color:white;font-size:14px;font-weight:bold;}
 
 /*button*/
 .coolButton{
