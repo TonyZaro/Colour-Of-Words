@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<style>
+	.word{border-bottom:1px solid #000;}
+	</style>
+	
+</head>
+
+<body>
+
+{% for word in wordcollection %}
+
+	<div class="word">
+		<div class="wordText">{{word.text}}</div>
+		<div class="wordCreationDate">{{word.created}}</div>				
+	</div>
+
+{% endfor%}
+
+</body>
+
+<html>

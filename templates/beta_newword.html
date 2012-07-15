@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="static/betastyle.css"/>
+<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="static/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+
+	$("p#findColorButton").click(function() {	
+      	$('form#wordinput').submit();		
+	});
+
+});
+</script>
+</head>
+<body>
+
+<div id="pagewrapper">	
+
+	<div id="header">
+		<p >The colour of words<p>
+	</div>
+	
+	<div id="spacer">
+	</div>
+	
+	<form id="wordinput"method="post">
+		<label>
+			<p class="instruction">Choose Your Word</p>
+			<input type="text" name="word" value="{{word}}">
+		</label>
+		<div id="error">{{error}}</div>
+		<p class="coolButton" id="findColorButton">Discover Its colour</p>
+	</form>
+	
+	
+<div id="pagewrapper">	
+	
+</body>
+</html>
+
+<!--
+<div id="wordinputpanel">
+	<div id="buttonpanel">
+	<form id="wordinput">
+		<p class="instruction">Choose your word</p>
+		<input type="text" id="targetWord" name="targetword"/>
+		<p class="coolButton" id="findColorButton">Discover Its colour</p>
+	</form>
+	</div>
+</div>
+-->

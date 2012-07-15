@@ -16,3 +16,5 @@ handlers:
 - url: /lasagna
   script: lasagna.py
 
+- url: /beta.*
+  script: beta.py

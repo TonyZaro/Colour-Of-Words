@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/betastyle.css"/>
+<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/static/processing-1.3.6.js"></script>
+<script type="text/javascript" src="/static/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">var switchTo5x=false;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "ur-8a1b1cc1-15bb-8045-315d-2685241426"}); </script>
+<script>
+function getRandomInt(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+/*Original Randomly Generate Colors*/
+/*
+var bgColorArray = [getRandomInt(100,150),getRandomInt(100,150),getRandomInt(100,150)];
+var branchColorArray = [getRandomInt(0,255),getRandomInt(0,255),getRandomInt(0,255)];
+var leafColorArray = [getRandomInt(0,255),getRandomInt(0,255),getRandomInt(0,255)];
+*/
+/*Database Driven Colors*/
+var leafColorArray = {{hueData}};
+var bgColorArray = [getRandomInt(100,150),getRandomInt(100,150),getRandomInt(100,150)];
+var branchColorArray = [getRandomInt(0,255),getRandomInt(0,255),getRandomInt(0,255)];
+
+function reDrawTree(){
+	processingInstance = Processing.instances[0];  //variable allow processing functions to be called via js
+	processingInstance.redraw();
+}
+</script>
+<script>
+$(document).ready(function() {
+
+	$("p#reGenerateButton").click(function() {
+		reDrawTree();
+	});	
+	
+
+	$("p#exploreAnotherButton").click(function() {
+		window.location.replace("http://localhost:8085/beta");
+	});
+
+	reDrawTree();
+
+});
+</script>
+
+</head>
+<body>
+<div id="pagewrapper">	
+
+		<div id="header">
+			<p >The colour of words<p>
+		</div>
+
+		<div id="spacer">
+		</div>
+		
+<div id="resultpanel">
+	<div id="robotoSuccessful">
+		<p class="instruction resultDescription" >You Entered: <span id="targetWord">{{word}}</span></p></br>
+		<p class="instruction resultDescription" >Mr. Roboto managed to work out the colour of this word.</p></br>
+		<p class="instruction resultDescription" >
+			He Used <a href="{{flickrLink}}" id="flickrLink">Flickr</a> and some 
+			<a href="http://mkweb.bcgsc.ca/color_summarizer/" id="summarizerLink">Magic</a> 
+			to paint you a tree in the colour of the word, yay!</p>					
+			<p class="coolButton" id="reGenerateButton">Re-Generate Image</p>
+			<p class="coolButton" id="exploreAnotherButton">Choose again</p>
+	</div>
+
+	<div id="canvaswrapper">
+
+		<canvas width="450" height="450" data-processing-sources="/static/newtree.pde"></canvas>
+	</div>
+	<div id="sharing">
+		<span class='st_sharethis_large' displayText='ShareThis'></span>
+		<span class='st_facebook_large' displayText='Facebook'></span>
+		<span class='st_twitter_large' displayText='Tweet'></span>
+		<span class='st_linkedin_large' displayText='LinkedIn'></span>
+		<span class='st_email_large' displayText='Email'></span>
+	</div>
+</div>
+
+
+
+<div id="pagewrapper">	
+
+
+
+</body>
