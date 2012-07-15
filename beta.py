@@ -11,9 +11,15 @@ from  flickrAPI import ColorOfWordsAPI
 
 class Word(db.Model):
 	text = db.StringProperty(required = True)
+	
 	hue = db.ListProperty(int,default=[random.randrange(0,256),random.randrange(0,256),random.randrange(0,256)])
 	saturation = db.ListProperty(int,default=[random.randrange(0,256),random.randrange(0,256),random.randrange(0,256)])
 	value = db.ListProperty(int,default=[random.randrange(0,256),random.randrange(0,256),random.randrange(0,256)])
+	
+	randomLeafColor = db.ListProperty(int,default=[random.randrange(0,256),random.randrange(0,256),random.randrange(0,256)])	
+	randomBackgroundColor = db.ListProperty(int,default=[random.randrange(100,151),random.randrange(100,151),random.randrange(100,151)])
+	randomBranchColor = db.ListProperty(int,default=[random.randrange(0,256),random.randrange(0,256),random.randrange(0,256)])
+	
 	publicFlickrURL = db.StringProperty(default="http://flickr.com")
 	flickrAPISuccess = db.BooleanProperty(default=False)
 	created = db.DateTimeProperty( auto_now_add = True)
@@ -83,7 +89,10 @@ class SingleWord(webapp.RequestHandler):
 			wordEntered = word.get().text
 			flickrURL = word.get().publicFlickrURL
 			hueColor = [int(i) for i in  word.get().hue]
-			html = template.render(self.path,{"word":wordEntered,"flickrLink":flickrURL,"hueData":hueColor})
+			randomBackgroundColor = [int(i) for i in  word.get().randomBackgroundColor]
+			randomBranchColor = [int(i) for i in  word.get().randomBranchColor]
+			
+			html = template.render(self.path,{"word":wordEntered,"flickrLink":flickrURL,"hueData":hueColor, "randomBackground": randomBackgroundColor, "randomBranch": randomBranchColor})
 			self.response.out.write(html)
 		else:
 			self.redirect("/beta")
