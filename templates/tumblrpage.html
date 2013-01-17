@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base target="_blank" /> 
+	<!--Author:: Anthony Lazzaro (tonyzaro.com) 8th April 2012 -->
+	<script type="text/javascript" src="static/processing-1.3.6.js"></script>
+	<script type="text/javascript" src="static/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="static/behaviour.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/tumblrstyle.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-30784394-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+<div id="pagewrapper">
+	
+	<div id="header">
+		<p >The colour of words<p>
+	</div>
+	
+	<div id="spacer">
+	</div>
+	
+	<div id="contentwrapper"><!-- start of content wrapper -->
+		
+		<div id="wordinputpanel"><!-- 'screen' where user enters target word -->
+			<div id="buttonpanel">
+			<form id="wordinput">
+				<p class="instruction">Choose your word</p>
+				<input type="text" id="targetWord" name="targetword"/>
+				<p class="coolButton" id="findColorButton">Discover Its colour</p>
+			</form>
+			</div>
+		</div>
+		
+		<div id="resultpanel"><!-- 'screen' where user is shown the color of their word -->
+			<div id="results">
+				
+				<div id="robotoWorking">
+				<p class="instruction resultDescription" >You Entered: <span id="targetWord">XXX</span></p></br>
+				<p class="instruction resultDescription" >Mr. Roboto is trying to work out the colour of this word.</p></br>
+				</div>
+				
+				<div id="robotoSuccessful">
+				<p class="instruction resultDescription" >You Entered: <span id="targetWord">XXX</span></p></br>
+				<p class="instruction resultDescription" >Mr. Roboto managed to work out the colour of this word.</p></br>
+				<p class="instruction resultDescription" >
+					He Used <a href="http://www.flickr.com" id="flickrLink">Flickr</a> and some 
+					<a href="http://mkweb.bcgsc.ca/color_summarizer/" id="summarizerLink">Magic</a> 
+					to paint you a tree in the colour of the word, yay!</p>					
+				<p class="coolButton" id="reGenerateButton">Re-Generate Image</p>
+				<p class="coolButton" id="exploreAnotherButton">Choose again</p>
+				</div>
+				
+				<div id="robotoFailure">
+				<p class="instruction resultDescription" >You Entered: <span id="targetWord">XXX</span></p></br>
+				<p class="instruction resultDescription" >Mr. Roboto is tired and didn't work out the colour of this word.</p></br>
+				<p class="instruction resultDescription" >Instead he made a tree with random colours for you, yay!</p>				
+				<p class="coolButton" id="reGenerateButton">Re-Generate Tree</p>
+				<p class="coolButton" id="exploreAnotherButton">Choose again</p>
+				</div>				
+				
+			</div>
+			
+			<div id="canvaswrapper">
+				<div id="loadingIndicator">
+					<div id="loadingAssetsWrapper">
+					<img id="loadingImage" src="static/loading.gif"/>
+					<p id="loadingInstruction" class="instruction">Loading</p>
+				</div>
+				</div>
+				<canvas width="450" height="450" data-processing-sources="/static/newtree.pde"></canvas>
+			</div>
+		</div>
+		
+	</div><!-- end of content wrapper -->
+
+	
+	
+</div><!-- end of page wrapper-->
+</body>
+</html>

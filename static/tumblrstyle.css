@@ -1,0 +1,76 @@
+body{padding:0;margin:0px;width:855px;height:480px;}
+/*Layout*/
+#pagewrapper{width:855px;}
+
+#header{height:17px;}
+#spacer{width:855px;height:10px;}
+
+#wordinputpanel{width:855px;margin:20px auto;position:relative;left:0%;}
+#resultpanel{width:855px;margin:10px auto 0px auto;position:absolute;left:-200%;top:0px;}
+
+/*word input panel*/
+#wordinput{width:300px;height:100px;margin:10px auto;}
+#buttonpanel{width:450px;height:468px;margin:50px auto;}
+
+/*result panel*/
+div#results{width:380px;height:450px;position:relative;float:left;}
+#canvaswrapper{width:450px;height:450px;margin-left:5px;position:relative;float:left;}
+
+.coolButton{ width:300px;height:100px;margin: 20px auto;}
+.resultDescription{ width:380px;margin:5px auto;}
+#links{margin-left:470px;margin-top:50px;width:450px;}
+div#robotoWorking{display:block;}
+div#robotoSuccessful{display:none;}
+div#robotoFailure{display:none;}
+
+div#loadingIndicator{position:absolute;top:0;left:0;display:none;float:left;z-index=10;background:white;width:450px;height:450px;}
+#loadingAssetsWrapper{width:128px;height:128px;margin-left:auto;margin-right:auto;margin-top:80px;}
+
+/*Colour*/
+#header{background-color:white;}
+#buttonpanel{background-color:white;}
+#spacer{background-color:black;}
+
+/*boarders*/
+#canvaswrapper{border:8px black solid;}
+
+/*form*/
+input{width:300px;height:40px;}
+
+/*text*/
+#header{font-family: 'Press Start 2P', cursive; font-size:35px;color:black; text-align:left;line-height:0px; }
+.instruction{ font-family: 'Press Start 2P', cursive; color:black;font-size:15px;}
+input{font-family: 'Press Start 2P', cursive; color:black;font-size:18px;}
+.coolButton{font-family:'Press Start 2P',cursive; color:white;font-size:14px;font-weight:bold;}
+
+/*button*/
+.coolButton{
+	background:#454545	;
+
+	text-align:center;
+	line-height:100px;
+	text-decoration:none;
+	
+	 /* BORDER RADIUS */
+	 -moz-border-radius: 10px;
+	 -webkit-border-radius: 10px;
+	 border-radius: 10px;
+	
+	 border: 1px solid #368DBE;
+	 border-top: 1px solid #c3d6df;
+}
+	
+	/* WHILE HOVERED */
+	.coolButton:hover {
+		background: #014464;
+	 	background: -moz-linear-gradient(top, #0c5f85, #0b5273 50%, #024869 51%, #003853);
+	 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c5f85), color-stop(.5, #0b5273), color-stop(.51, #024869), to(#003853));
+	}
+
+	/* WHILE BEING CLICKED */
+	.coolButton:active {
+		-moz-box-shadow: 0 2px 6px black;
+		-webkit-box-shadow: 0 2px 6px black;
+	}
+	
+
